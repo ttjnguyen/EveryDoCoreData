@@ -15,6 +15,11 @@
 		2DB693061DE62BE8004EA018 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB693041DE62BE8004EA018 /* Main.storyboard */; };
 		2DB693081DE62BE8004EA018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DB693071DE62BE8004EA018 /* Assets.xcassets */; };
 		2DB6930B1DE62BE9004EA018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB693091DE62BE9004EA018 /* LaunchScreen.storyboard */; };
+		2DB6931C1DE62D66004EA018 /* ToDos+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB693191DE62D66004EA018 /* ToDos+CoreDataProperties.m */; };
+		2DB6931D1DE62D66004EA018 /* ToDos.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6931B1DE62D66004EA018 /* ToDos.m */; };
+		2DB693201DE62F4C004EA018 /* ToDos+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6931F1DE62F4C004EA018 /* ToDos+Add.m */; };
+		2DB693231DE63979004EA018 /* LHLCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB693221DE63979004EA018 /* LHLCoreDataStack.m */; };
+		2DB693261DE6605C004EA018 /* UserInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB693251DE6605C004EA018 /* UserInputViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,16 @@
 		2DB693071DE62BE8004EA018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DB6930A1DE62BE9004EA018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DB6930C1DE62BE9004EA018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DB693181DE62D66004EA018 /* ToDos+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ToDos+CoreDataProperties.h"; path = "../ToDos+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2DB693191DE62D66004EA018 /* ToDos+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ToDos+CoreDataProperties.m"; path = "../ToDos+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2DB6931A1DE62D66004EA018 /* ToDos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToDos.h; path = ../ToDos.h; sourceTree = "<group>"; };
+		2DB6931B1DE62D66004EA018 /* ToDos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToDos.m; path = ../ToDos.m; sourceTree = "<group>"; };
+		2DB6931E1DE62F4C004EA018 /* ToDos+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDos+Add.h"; sourceTree = "<group>"; };
+		2DB6931F1DE62F4C004EA018 /* ToDos+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDos+Add.m"; sourceTree = "<group>"; };
+		2DB693211DE63979004EA018 /* LHLCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLCoreDataStack.h; sourceTree = "<group>"; };
+		2DB693221DE63979004EA018 /* LHLCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLCoreDataStack.m; sourceTree = "<group>"; };
+		2DB693241DE6605C004EA018 /* UserInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInputViewController.h; sourceTree = "<group>"; };
+		2DB693251DE6605C004EA018 /* UserInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInputViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +82,23 @@
 				2DB692F91DE62BE8004EA018 /* AppDelegate.m */,
 				2DB692FE1DE62BE8004EA018 /* MasterViewController.h */,
 				2DB692FF1DE62BE8004EA018 /* MasterViewController.m */,
+				2DB693211DE63979004EA018 /* LHLCoreDataStack.h */,
+				2DB693221DE63979004EA018 /* LHLCoreDataStack.m */,
 				2DB693011DE62BE8004EA018 /* DetailViewController.h */,
+				2DB693241DE6605C004EA018 /* UserInputViewController.h */,
+				2DB693251DE6605C004EA018 /* UserInputViewController.m */,
 				2DB693021DE62BE8004EA018 /* DetailViewController.m */,
 				2DB693041DE62BE8004EA018 /* Main.storyboard */,
 				2DB693071DE62BE8004EA018 /* Assets.xcassets */,
+				2DB693181DE62D66004EA018 /* ToDos+CoreDataProperties.h */,
+				2DB693191DE62D66004EA018 /* ToDos+CoreDataProperties.m */,
+				2DB6931A1DE62D66004EA018 /* ToDos.h */,
+				2DB6931B1DE62D66004EA018 /* ToDos.m */,
+				2DB6931E1DE62F4C004EA018 /* ToDos+Add.h */,
+				2DB6931F1DE62F4C004EA018 /* ToDos+Add.m */,
+				2DB692FB1DE62BE8004EA018 /* EveryDoCoreData.xcdatamodeld */,
 				2DB693091DE62BE9004EA018 /* LaunchScreen.storyboard */,
 				2DB6930C1DE62BE9004EA018 /* Info.plist */,
-				2DB692FB1DE62BE8004EA018 /* EveryDoCoreData.xcdatamodeld */,
 				2DB692F51DE62BE8004EA018 /* Supporting Files */,
 			);
 			path = EveryDoCoreData;
@@ -157,11 +182,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DB693261DE6605C004EA018 /* UserInputViewController.m in Sources */,
 				2DB693031DE62BE8004EA018 /* DetailViewController.m in Sources */,
+				2DB6931C1DE62D66004EA018 /* ToDos+CoreDataProperties.m in Sources */,
 				2DB693001DE62BE8004EA018 /* MasterViewController.m in Sources */,
+				2DB693201DE62F4C004EA018 /* ToDos+Add.m in Sources */,
 				2DB692FA1DE62BE8004EA018 /* AppDelegate.m in Sources */,
 				2DB692F71DE62BE8004EA018 /* main.m in Sources */,
 				2DB692FD1DE62BE8004EA018 /* EveryDoCoreData.xcdatamodeld in Sources */,
+				2DB6931D1DE62D66004EA018 /* ToDos.m in Sources */,
+				2DB693231DE63979004EA018 /* LHLCoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
