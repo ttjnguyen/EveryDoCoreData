@@ -11,7 +11,7 @@
 #import "Todos.h"
 #import "LHLCoreDataStack.h"
 
-@interface MasterViewController ()
+@interface MasterViewController () <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *toDosTableView;
 
@@ -65,20 +65,35 @@
         abort();
     }
     
-    [self.toDosTableView reloadData];
 }
+
 
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"takeUserInput"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
+       // ToDos *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        
+        
+        UserInputViewController *controller = (UserInputViewController *)[segue destinationViewController];
+        
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"ToDos" inManagedObjectContext:self.managedObjectContext];
+        
+        ToDos *newToDo = [[ToDos alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+        controller.delegate = self;
+        controller.toDo = newToDo;
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
+}
+
+-(void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.toDosTableView beginUpdates];
+}
+
+-(void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.toDosTableView endUpdates];
 }
 
 - (void)goToUserInputScreen
@@ -99,7 +114,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    ToDos *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     [self configureCell:cell withObject:object];
     return cell;
 }
@@ -123,8 +138,8 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell withObject:(NSManagedObject *)object {
-    cell.textLabel.text = [object valueForKey:@"title"];
+- (void)configureCell:(UITableViewCell *)cell withObject:(ToDos *)object {
+    cell.textLabel.text = object.title;
 }
 
 #pragma mark - Fetched results controller
@@ -161,11 +176,6 @@
     
     return _fetchedResultsController;
 }    
-
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
-{
-    [self.tableView beginUpdates];
-}
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
@@ -209,10 +219,6 @@
     }
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    [self.tableView endUpdates];
-}
 
 
 @end

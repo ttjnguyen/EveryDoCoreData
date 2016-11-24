@@ -10,7 +10,9 @@
 #import "UserInputViewController.h"
 
 @implementation UserInputViewController
-
+-(void)viewDidLoad
+{
+}
 - (IBAction)saveButtonPressed:(UIButton *)sender
 {
     self.toDo.title = self.titleField.text;
